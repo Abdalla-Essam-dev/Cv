@@ -761,7 +761,7 @@ section:not(#hero) {
 /* ══════════════════════════════════════════════
    RESPONSIVE — MOBILE PHONE
 ═══════════════════════════════════════════════ */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .about-grid,
   .hero-content {
     display: flex !important;
@@ -774,15 +774,17 @@ section:not(#hero) {
   .stats-grid,
   .skills-grid,
   .contact-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 16px !important;
   }
 
+  .about-card,
   .stat-card,
   .skill-card,
   .contact-card {
     width: 100% !important;
+    display: block !important;
   }
 
   h1 { font-size: 2.2rem !important; }
@@ -795,7 +797,7 @@ section:not(#hero) {
     margin-bottom: 15px;
   }
 
-  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-inner { flex-direction: column !important; text-align: center; }
 }
 
 /* ══════════════════════════════════════════════
