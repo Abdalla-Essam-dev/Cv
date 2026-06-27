@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abdalla Essam – Software Engineer. Portfolio & CV website with 3D animations." />
+  <title>Abdalla Essam | Software Engineer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">AE</div>
+    <ul class="nav-links">
+      <li><a href="#hero" id="nav-home">Home</a></li>
+      <li><a href="#about" id="nav-about">About</a></li>
+      <li><a href="#skills" id="nav-skills">Skills</a></li>
+      <li><a href="#contact" id="nav-contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn-primary" id="nav-hire-btn">Hire Me</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section id="hero">
+    <canvas id="three-canvas"></canvas>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-avatar reveal-up">
+        <img src="Me.jpg" alt="Abdalla Essam" class="hero-avatar-img" />
+      </div>
+      <h1 class="hero-title reveal-up">
+        <span class="gradient-text">Abdalla</span><br />
+        <span class="hero-last">Essam</span>
+      </h1>
+      <div class="hero-badge reveal-up">Software Engineer</div>
+      <div class="hero-actions reveal-up">
+        <a href="#contact" class="btn-primary" id="hero-contact-btn">Get In Touch</a>
+        <a href="#about" class="btn-ghost" id="hero-about-btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" id="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+  <section id="about">
+    <div class="section-container">
+      <div class="section-tag reveal-up">About Me</div>
+      <h2 class="section-title reveal-up">Turning ideas into<br /><span class="gradient-text">reality</span></h2>
+
+      <div class="about-grid">
+        <div class="about-card glass-card reveal-left">
+          <div class="about-avatar">
+            <div class="avatar-ring"></div>
+            <div class="avatar-initials">AE</div>
+          </div>
+          <div class="about-text">
+            <h3>Hi, I'm Abdalla 👋</h3>
+            <p>
+              I am a results-driven Software Engineer with a solid foundation in building scalable, efficient, and visually compelling web applications. With a B.Sc. (Hons) in Computer Science, I specialize in bridging clean, maintainable backend architecture with intuitive, modern frontend design to solve complex problems and deliver real-world impact.
+            </p>
+            <a href="CV.pdf" download class="btn-primary download-cv-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="about-stats reveal-right">
+          <div class="stat-card glass-card" id="stat-projects">
+            <div class="stat-icon">🚀</div>
+            <div class="stat-number" data-target="2">2</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-card glass-card" id="stat-exp">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-number" data-target="2">2</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card glass-card" id="stat-tech">
+            <div class="stat-icon">🛠️</div>
+            <div class="stat-number" data-target="15">15</div>
+            <div class="stat-label">Technologies</div>
+          </div>
+          <div class="stat-card glass-card" id="stat-git">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                <circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+                <path d="M6 9v6M9 6h6a3 3 0 0 1 3 3v6"/>
+              </svg>
+            </div>
+            <div class="stat-number" data-target="500">500</div>
+            <div class="stat-label">Git Commits</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
+  <section id="skills">
+    <div class="section-container">
+      <div class="section-tag reveal-up">What I Know</div>
+      <h2 class="section-title reveal-up">Technical <span class="gradient-text">Skills</span></h2>
+
+      <div class="skills-grid">
+        <!-- Skill Cards -->
+        <div class="skill-card glass-card reveal-up" id="skill-js">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <span>JavaScript</span>
+          <div class="skill-progress-container">
+            <div class="skill-progress-bar" data-progress="90%"></div>
+            <span class="skill-percentage">90%</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card reveal-up" id="skill-python">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+          </div>
+          <span>Python</span>
+          <div class="skill-progress-container">
+            <div class="skill-progress-bar" data-progress="85%"></div>
+            <span class="skill-percentage">85%</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card reveal-up" id="skill-react">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+          </div>
+          <span>React</span>
+          <div class="skill-progress-container">
+            <div class="skill-progress-bar" data-progress="85%"></div>
+            <span class="skill-percentage">85%</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card reveal-up" id="skill-node">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <span>Node.js</span>
+          <div class="skill-progress-container">
+            <div class="skill-progress-bar" data-progress="80%"></div>
+            <span class="skill-percentage">80%</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card reveal-up" id="skill-db">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <span>Databases</span>
+          <div class="skill-progress-container">
+            <div class="skill-progress-bar" data-progress="80%"></div>
+            <span class="skill-percentage">80%</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card reveal-up" id="skill-git">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6M9 6h6a3 3 0 0 1 3 3v6"/></svg>
+          </div>
+          <span>Git & DevOps</span>
+          <div class="skill-progress-container">
+            <div class="skill-progress-bar" data-progress="75%"></div>
+            <span class="skill-percentage">75%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+  <section id="contact">
+    <div class="section-container">
+      <div class="section-tag reveal-up">Let's Connect</div>
+      <h2 class="section-title reveal-up">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="section-sub reveal-up">I'm open to new opportunities, collaborations, and interesting projects. Drop me a message!</p>
+
+      <div class="contact-grid">
+
+        <!-- Phone -->
+        <a href="https://wa.me/201070606408" target="_blank" rel="noopener" class="contact-card glass-card reveal-up" id="contact-phone">
+          <div class="contact-icon-wrap" style="--icon-color: #22d3ee;">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+20 1070606408</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:3bdallahessam2005@gmail.com" class="contact-card glass-card reveal-up" id="contact-email">
+          <div class="contact-icon-wrap" style="--icon-color: #a78bfa;">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">3bdallahessam2005@gmail.com</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/27soldier/" target="_blank" rel="noopener" class="contact-card glass-card reveal-up" id="contact-instagram">
+          <div class="contact-icon-wrap" style="--icon-color: #f472b6;">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Instagram</span>
+            <span class="contact-value">@27soldier</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/abdalla-essam-5b42913b3" target="_blank" rel="noopener" class="contact-card glass-card reveal-up" id="contact-linkedin">
+          <div class="contact-icon-wrap" style="--icon-color: #38bdf8;">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">Abdalla Essam</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Abdalla-Essam-dev" target="_blank" rel="noopener" class="contact-card glass-card reveal-up" id="contact-github">
+          <div class="contact-icon-wrap" style="--icon-color: #e2e8f0;">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">Abdalla-Essam-dev</span>
+          </div>
+          <div class="contact-arrow">→</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">AE</div>
+      <p class="footer-copy">© 2026 Abdalla Essam. Crafted with ❤️ &amp; code.</p>
+
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
