@@ -855,3 +855,21 @@ section:not(#hero) {
   0%, 100% { transform: translateY(0) rotate(-2deg); }
   50% { transform: translateY(-14px) rotate(2deg); }
 }
+
+/* --- ULTIMATE MOBILE FIX --- */
+@media (max-width: 768px) {
+  /* Force grid structures to stack perfectly */
+  .about-grid, .stats-grid, .skills-grid, .contact-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  /* Ensure individual metric and project cards expand to full width */
+  .stat-card, .skill-card, .glass-card, .about-stats {
+    width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
