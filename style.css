@@ -856,32 +856,14 @@ section:not(#hero) {
   50% { transform: translateY(-14px) rotate(2deg); }
 }
 
-/* --- ULTIMATE MOBILE FIX --- */
-@media (max-width: 768px) {
-  /* Force grid structures to stack perfectly */
-  .about-grid, .stats-grid, .skills-grid, .contact-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-  
-  /* Ensure individual metric and project cards expand to full width */
-  .stat-card, .skill-card, .glass-card, .about-stats {
-    width: 100% !important;
-    min-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-}
-
 /* ===================================================
-   CORE MOBILE VIEWPORT & CONTAINER OVERRIDES
+   MOBILE FIXES — HERO, AVATAR, AND STACKED LAYOUTS
    =================================================== */
 
 html, body {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important; /* Prevents awkward horizontal scrolling */
+  overflow-x: hidden !important;
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
@@ -892,11 +874,10 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  /* Break ALL fixed desktop layout widths */
-  .section-container, 
-  .about-container, 
-  main, 
-  section, 
+  .section-container,
+  .about-container,
+  main,
+  section,
   div[class*="container"] {
     width: 100% !important;
     max-width: 100% !important;
@@ -906,10 +887,45 @@ html, body {
     float: none !important;
   }
 
-  /* Force grid sections to collapse into a clean single vertical item list */
-  .about-grid, 
-  .stats-grid, 
-  .skills-grid, 
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-title,
+  #hero .hero-title,
+  #hero h1 {
+    display: block !important;
+    font-size: 6.5vw !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-avatar,
+  .hero-avatar-reveal-up,
+  .hero-section img,
+  .avatar-container,
+  .hero-avatar-img {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-avatar-img {
+    width: 130px !important;
+    height: 130px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .about-grid,
+  .stats-grid,
+  .skills-grid,
   .contact-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -918,35 +934,20 @@ html, body {
     gap: 16px !important;
   }
 
-  /* Force individual layout cards to take full horizontal width */
-  .stat-card, 
-  .skill-card, 
-  .glass-card, 
+  .about-card,
+  .stat-card,
+  .skill-card,
+  .contact-card,
   .about-stats {
     width: 100% !important;
     min-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
-/* Fix the Hero text wrapping and overlapping */
-  .hero-title, 
-  .hero-section h1,
-  h1 {
-    font-size: 1.8rem !important; /* Dynamically shrinks heading size */
-    line-height: 1.3 !important;
-    white-space: normal !important;
+
+  .footer-inner {
+    flex-direction: column !important;
     text-align: center !important;
-    margin-top: 20px !important;
   }
-
-  /* Prevent the AE logo avatar from overlapping the headline text */
-  .hero-avatar-reveal-up,
-  .hero-section img,
-  .avatar-container {
-    margin-bottom: 10px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
 }
