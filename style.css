@@ -873,3 +873,59 @@ section:not(#hero) {
     box-sizing: border-box !important;
   }
 }
+
+/* ===================================================
+   CORE MOBILE VIEWPORT & CONTAINER OVERRIDES
+   =================================================== */
+
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important; /* Prevents awkward horizontal scrolling */
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit !important;
+}
+
+@media (max-width: 768px) {
+  /* Break ALL fixed desktop layout widths */
+  .section-container, 
+  .about-container, 
+  main, 
+  section, 
+  div[class*="container"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin: 0 auto !important;
+    float: none !important;
+  }
+
+  /* Force grid sections to collapse into a clean single vertical item list */
+  .about-grid, 
+  .stats-grid, 
+  .skills-grid, 
+  .contact-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 16px !important;
+  }
+
+  /* Force individual layout cards to take full horizontal width */
+  .stat-card, 
+  .skill-card, 
+  .glass-card, 
+  .about-stats {
+    width: 100% !important;
+    min-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
