@@ -358,10 +358,12 @@ section:not(#hero) {
   padding: clamp(80px, 12vw, 130px) 0;
 }
 
-.section-container {
-  max-width: 1100px;
+.section-container,
+.container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  padding: 0 24px;
 }
 
 .section-tag {
@@ -471,10 +473,11 @@ section:not(#hero) {
   align-self: flex-start;
 }
 
-.about-stats {
+.about-stats,
+.stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .stat-card {
@@ -512,7 +515,7 @@ section:not(#hero) {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .skill-card {
@@ -594,8 +597,8 @@ section:not(#hero) {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .contact-card {
@@ -744,19 +747,54 @@ section:not(#hero) {
 .contact-card:nth-child(5) { transition-delay: 0.4s; }
 
 /* ══════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — TABLET & SMALL LAPTOP
 ═══════════════════════════════════════════════ */
-@media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; }
+@media (max-width: 992px) {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-stats,
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
 }
 
+/* ══════════════════════════════════════════════
+   RESPONSIVE — MOBILE PHONE
+═══════════════════════════════════════════════ */
 @media (max-width: 600px) {
-  .skills-grid { grid-template-columns: 1fr; }
-  .about-stats { grid-template-columns: 1fr 1fr; }
-  .hero-title { font-size: 3rem; }
+  .about-grid,
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-stats,
+  .stats-grid,
+  .skills-grid,
+  .contact-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .stat-card,
+  .skill-card,
+  .contact-card {
+    width: 100% !important;
+  }
+
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 1.8rem !important; }
+  p, span { font-size: 0.95rem !important; }
+
+  .hero-avatar-img {
+    width: 130px !important;
+    height: 130px !important;
+    margin-bottom: 15px;
+  }
+
   .footer-inner { flex-direction: column; text-align: center; }
 }
 
@@ -794,39 +832,6 @@ section:not(#hero) {
   transition: color var(--transition);
 }
 .mobile-nav a:hover { color: var(--blue); }
-
-/* ══════════════════════════════════════════════
-   QR CARD
-═══════════════════════════════════════════════ */
-#contact-qr {
-  cursor: default;
-}
-#contact-qr .contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-.qr-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-.qr-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  background: #fff;
-  padding: 8px;
-  display: block;
-}
-.qr-caption {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  letter-spacing: 0.05em;
-}
 
 /* ══════════════════════════════════════════════
    PARTICLE / FLOATING LABEL PILL
